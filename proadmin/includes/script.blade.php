@@ -1,0 +1,13 @@
+<!-- <script src="./assets/admin/js/jquery-3.6.0.min.js"></script> -->
+<script src="./assets/admin/js/popper.min.js"></script>
+<!-- <script src="./assets/admin/js/bootstrap.min.js" ></script> -->
+<script src="./assets/backend/vendor/summernote/summernote-bs4.min.js"></script>
+<script src="./assets/backend/js/admin/summernote-init.js"></script>
+<script src="./assets/admin/js/jquery.dataTables.min.js"></script>
+<script src="./assets/admin/js/custom/data-table-page.js"></script>
+<script src="./assets/backend/vendor/select2/js/select2.min.js"></script>
+<script src="./assets/admin/js/metisMenu.min.js"></script>
+<script src="./assets/admin/js/image-preview.js"></script>
+<script src="./assets/admin/js/main.js"></script>
+<script src="./assets/admin/js/custom.js"></script>
+<!-- <script src="./assets/admin/js/bootstrap-select.min.js" ></script> -->
