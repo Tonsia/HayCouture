@@ -16,7 +16,7 @@
                 <div class="header__navbar__right">
                   <ul class="header__menu">
                     <li>
-                      <a href="" class="btn btn-dropdown user-profile" role="button" data-bs-toggle="dropdown">
+                      Admin <a href="" class="btn btn-dropdown user-profile" role="button" data-bs-toggle="dropdown">
                         <img src="https://zairito.zainikthemes.com/uploaded_files/admin_profile/profile.png" alt="icon">
                       </a>
                       <ul class="dropdown-menu">

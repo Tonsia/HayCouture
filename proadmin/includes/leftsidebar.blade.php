@@ -166,18 +166,34 @@
           </ul>
         </li>
 
+        <li class="">
+          <a class="has-arrow" href="#">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Stock Management</span>
+          </a>
+          <ul>
+            <li class="">
+              <a href="./manageStock.php">
+                <i class="fa fa-circle"></i>
+                <span>Manage Stock</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
         <!-- <li class="">
           <a href="./transactions.php">
             <i class="fas fa-random"></i>
             <span>Transactions</span>
           </a>
         </li> -->
-        <li class="">
+        <!-- <li class="">
         <a class="has-arrow" href="./taxSettings.php">
             <i class="fas fa-percent"></i>
             <span>Tax Settings</span>
           </a>
-        </li> 
+        </li>  -->
         <!-- <li class="">
           <a href="./deliveryCharge.php">
             <i class="fas fa-shipping-fast"></i>
