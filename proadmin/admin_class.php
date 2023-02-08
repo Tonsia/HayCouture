@@ -1209,12 +1209,65 @@ function reviewstatus()
 			else{
 				return "2";
 			}
-	}
+		}
 
 
 	}
 
 
+
+
+	function getstock(){
+		extract($_POST);
+		
+		$result1=$this->db->query("SELECT * FROM size_details where product_id='$pdtid' and size_id = '$size'");
+		if ($result1->num_rows > 0) {
+			$row1 = $result1->fetch_array();
+			$qty = $row1['quantity'];
+			return $qty;
+		}
+		else{
+			return 0;
+		}
+
+	}
+
+	
+	function getsizefromid(){
+		extract($_POST);
+		$str="";
+		$result=$this->db->query("SELECT * FROM size_details where product_id='$pdt'");
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$sid = $row['size_id'];
+
+				$result1=$this->db->query("SELECT * FROM product_size where size_id='$sid'");
+				if ($result1->num_rows > 0) {
+					while($row1 = $result1->fetch_assoc()) {
+						$str.="<option value='".$row1['size_id']."'>".$row1['size']."</option>";
+					}
+				}
+
+
+			}
+		}
+
+		return $str;
+
+	}
+
+	function addstock(){
+		extract($_POST);
+		$result=$this->db->query("UPDATE size_details SET quantity = quantity +'$stockamt' WHERE product_id='$pdtid' AND size_id='$size'");
+		return $result;
+
+		// $str="";
+		// $result=$this->db->query("SELECT * FROM size_details where product_id='$pdt'");
+	}
+
+	
+
+	
 
 	
 }

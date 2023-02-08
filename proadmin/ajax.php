@@ -272,6 +272,26 @@ if($action == 'availcouponcheck'){
 		echo $availcouponcheck;
 }
 
+if($action == 'getstock'){
+	$getstock = $crud->getstock(); 
+	if($getstock)
+		echo $getstock;
+}
+
+if($action == 'getsizefromid'){
+	$getsizefromid = $crud->getsizefromid(); 
+	if($getsizefromid)
+		echo $getsizefromid;
+}
+
+if($action == 'addstock'){
+	$addstock = $crud->addstock(); 
+	if($addstock)
+		echo $addstock;
+}
+
+
+
 
 
 
