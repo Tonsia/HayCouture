@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['designer']))
 {
-    header('location:http://localhost/pro/signin.php');
+    header('location:../auth/signin.php');
 }
 // print_r($_SESSION);
 ?>

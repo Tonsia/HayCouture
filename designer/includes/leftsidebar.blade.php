@@ -97,41 +97,6 @@
                 <!-- <span class="badge bg-info text-white">17</span> -->
               </a>
             </li>
-            <!-- <li class="">
-              <a href="./ordersPending.php">
-                <i class="fa fa-circle"></i>
-                <span>Pending Orders</span>
-                <span class="badge bg-info text-white">17</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="./ordersProcessing.php">
-                <i class="fa fa-circle"></i>
-                <span>Processing Orders</span>
-                <span class="badge bg-info text-white">0</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="./ordersShipped.php">
-                <i class="fa fa-circle"></i>
-                <span>Shipped Orders</span>
-                <span class="badge bg-info text-white">0</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="./ordersDelivered.php">
-                <i class="fa fa-circle"></i>
-                <span>Delivered Orders</span>
-                <span class="badge bg-info text-white">0</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="./ordersReturned.php">
-                <i class="fa fa-circle"></i>
-                <span>Returned Orders</span>
-                <span class="badge bg-info text-white">0</span>
-              </a>
-            </li> -->
           </ul>
         </li>
 

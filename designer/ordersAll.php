@@ -88,7 +88,7 @@
                                                 <td>'.$row6['reg_name'].'</td>
                                                 <td>'.$row4['p_name'].'</td>
                                                 <td>
-                                                    <img src="http://localhost/proadmin/'.$row5["img1"].'" border="0" height="50" class="img-rounded mr-1" align="center">
+                                                    <img src="../admin/'.$row5["img1"].'" border="0" height="50" class="img-rounded mr-1" align="center">
                                                 </td>
                                                 <td>'.$row3["size"].'</td>
                                                 <td>'.$row2["color"].'</td>

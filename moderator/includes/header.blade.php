@@ -8,7 +8,7 @@
                   <button class="sidebar-toggler">
                     <img src="./assets/admin/images/icons/header/bars.svg" alt="">
                   </button>
-                  <a href="http://localhost/lol_frontend/index.php" target="_blank" class="btn btn-primary text-white">Visit Site</a>
+                  <a href="../user/index.php" target="_blank" class="btn btn-primary text-white">Visit Site</a>
                 </div>
                 <!-- <div class="header__navbar__right"> -->
                 
@@ -20,15 +20,15 @@
                         <img src="https://zairito.zainikthemes.com/uploaded_files/admin_profile/profile.png" alt="icon">
                       </a>
                       <ul class="dropdown-menu">
-                        <!-- <li>
-                          <a class="dropdown-item" href="https://zairito.zainikthemes.com/admin/profile">
+                        <li>
+                          <a class="dropdown-item" >
                             <img src="https://zairito.zainikthemes.com/admin/images/icons/user.svg" alt="icon">
-                            <span>Profile
+                            <span>Moderator
                             </span>
                           </a>
-                        </li> -->
+                        </li>
                         <li>
-                          <a class="dropdown-item" href="http://localhost/pro/signin.php" >
+                          <a class="dropdown-item" href="../auth/signin.php" >
                             <img src="https://zairito.zainikthemes.com/admin/images/icons/logout.svg" alt="icon">
                             <span>Logout
                             </span>

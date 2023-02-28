@@ -11,7 +11,7 @@
                 <div class="breadcrumb__content__right">
                     <nav aria-label="breadcrumb">
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="">Home</a></li>
+                            <li class="breadcrumb-item"><a href="./dashboard.php">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Coupons</li>
                         </ul>
                     </nav>

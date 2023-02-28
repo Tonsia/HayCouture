@@ -107,7 +107,7 @@
                                                         <a  class="btn-action" onclick="changestatus('.$row0['status'].','.$row0['uniqueid'].')" title="Change Status">
                                                             <i class="fas fa-bars"></i>
                                                         </a>
-                                                        <a  class="btn-action" name="btn_pdf" id="btn_pdf" href="docdet_pdf.php?uid='.$row0['uniqueid'].'" title="Change Status">
+                                                        <a  class="btn-action" name="btn_pdf" id="btn_pdf" target="_blank" href="customorderpdf.php?uid='.$row0['id'].'" title="Change Status">
                                                             <i class="fas fa-file-invoice"></i>
                                                         </a>
                                                     </div>
@@ -150,7 +150,7 @@
                                                 <td>'.$row6['reg_name'].'</td>
                                                 <td>'.$row4['p_name'].'</td>
                                                 <td>
-                                                    <img src="http://localhost/proadmin/'.$row5["img1"].'" border="0" height="50" class="img-rounded mr-1" align="center">
+                                                    <img src="../admin/'.$row5["img1"].'" border="0" height="50" class="img-rounded mr-1" align="center">
                                                 </td>
                                                 <td>'.$row3["size"].'</td>
                                                 <td>'.$row2["color"].'</td>

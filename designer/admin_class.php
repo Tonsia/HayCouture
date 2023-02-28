@@ -1145,7 +1145,7 @@ function fabrics()
 			'<tr id='.$row["id"].' role="row" class="odd">'.
 			'<td>' .$i.'</td>'.
 			'<td class="sorting_1">' .$row["fabric_name"]. '</td>'.
-			'<td><img style="height:100px" src="../customdev/'.$row["fabric_path"].'"class="img-rounded img-responsive" align="center">'.'</td>'.
+			'<td><img style="height:100px" src="../custom/'.$row["fabric_path"].'"class="img-rounded img-responsive" align="center">'.'</td>'.
 			
 				'<td>'.$sts.'</td>'.
 				'<td>

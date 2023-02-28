@@ -11,9 +11,9 @@
                   </div>
                   <div class="breadcrumb__content__right">
                     <nav aria-label="breadcrumb">
-                      <ul class="breadcrumb">
+                      <ul class="breadcrumb"> 
                         <li class="breadcrumb-item">
-                          <a href="http://localhost/proadmin/dashboard.php">Home</a>
+                          <a href="./dashboard.php">Home</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                       </ul>

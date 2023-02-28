@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Hay Couture</title>
+
+    <link rel="shortcut icon" href="https://zairito.zainikthemes.com/uploaded_files/favicon/favicon.png" type="image/x-icon">
+
+    <link rel="apple-touch-icon" href="https://zairito.zainikthemes.com/uploaded_files/favicon/favicon.png">
+
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/admin/css/all.min.css">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/admin/css/bootstrap.min.css">
+    <link href="https://zairito.zainikthemes.com/admin/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://zairito.zainikthemes.com/backend/vendor/summernote/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/backend/vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/backend/vendor/select2/css/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/admin/css/metisMenu.min.css">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/admin/css/image-preview.css">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/admin/styles/main.css">
+    <link href="https://zairito.zainikthemes.com/backend/css/admin/extra.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://zairito.zainikthemes.com/frontend/assets/css/cookie-consent.css">
+</head>
+
+<body>
+
+    <div class="sidebar__area">
+        <div class="sidebar__close">
+            <button class="close-btn">
+<i class="fa fa-close"></i>
+</button>
+        </div>
+        <div class="sidebar__brand">
+            <a href="https://zairito.zainikthemes.com/admin/dashboard">
+<img src="https://zairito.zainikthemes.com/uploaded_files/logo/footer-logo.png" alt="icon">
+</a>
+        </div>
+        <ul id="sidebar-menu" class="sidebar__menu">
+            <li class="mm-active">
+                <a href="https://zairito.zainikthemes.com/admin/dashboard">
+<img src="https://zairito.zainikthemes.com/admin/images/icons/sidebar/dashboard.svg" alt="icon">
+<span>Dashboard</span>
+</a>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-user"></i>
+<span>Admin Manage</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/admins">
+<i class="fa fa-circle"></i>
+<span>Admin List</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/create-admin">
+<i class="fa fa-circle"></i>
+<span>Add Admin</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/roles">
+<i class="fa fa-circle"></i>
+<span>Roles</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-list"></i>
+<span>Category and Brand</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/category">
+<i class="fa fa-circle"></i>
+<span>Category</span>
+ </a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/brand">
+<i class="fa fa-circle"></i>
+<span>Brand</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fab fa-product-hunt"></i>
+<span>Products</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/product/create">
+<i class="fa fa-circle"></i>
+<span>Add Product</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/product">
+<i class="fa fa-circle"></i>
+<span>Product List</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/product-color">
+<i class="fa fa-circle"></i>
+<span>Product Color</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/product-size">
+<i class="fa fa-circle"></i>
+<span>Product Size</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-shopping-cart"></i>
+<span>Order Management</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/orders/all">
+<i class="fa fa-circle"></i>
+<span>All Orders</span>
+<span class="badge bg-info text-white">17</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/orders/pending">
+<i class="fa fa-circle"></i>
+<span>Pending Orders</span>
+<span class="badge bg-info text-white">17</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/orders/processing">
+<i class="fa fa-circle"></i>
+<span>Processing Orders</span>
+<span class="badge bg-info text-white">0</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/orders/shipped">
+<i class="fa fa-circle"></i>
+<span>Shipped Orders</span>
+<span class="badge bg-info text-white">0</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/orders/delivered">
+<i class="fa fa-circle"></i>
+<span>Delivered Orders</span>
+<span class="badge bg-info text-white">0</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/orders/returned">
+<i class="fa fa-circle"></i>
+<span>Returned Orders</span>
+<span class="badge bg-info text-white">0</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/transactions">
+<i class="fas fa-random"></i>
+<span>Transactions</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/country-tax-list">
+<i class="fas fa-percent"></i>
+<span>Tax Settings</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/delivery-charge-list">
+<i class="fas fa-shipping-fast"></i>
+<span>Delivery Charge</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/currency-list">
+<i class="fa fa-dollar-sign"></i>
+<span>Currency</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/coupon">
+<i class="fas fa-code"></i>
+<span>Coupon Code</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/advertise">
+<i class="fas fa-ad"></i>
+<span>Advertise</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/blog">
+<i class="fab fa-blogger-b"></i>
+<span>Blog</span>
+</a>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-tags"></i>
+<span>Tags</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/product-tag">
+<i class="fa fa-circle"></i>
+<span>Product Tag</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/item-tag">
+<i class="fa fa-circle"></i>
+<span>Item Tag</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-blog"></i>
+<span>CRM</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/contact-us/index">
+<i class="fa fa-circle"></i>
+<span>Contact Us</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/subscribe/list">
+<i class="fa fa-circle"></i>
+<span>Subscribers</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-users"></i>
+<span>Users</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/customers">
+<i class="fa fa-circle"></i>
+ <span>Customer List</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-cube"></i>
+<span>CMS</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/general-settings">
+<i class="fa fa-circle"></i>
+<span>General Settings</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/site-content/home-page">
+<i class="fa fa-circle"></i>
+<span>Home Page</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/site-content/about-page">
+<i class="fa fa-circle"></i>
+<span>About Page</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/social-link">
+<i class="fa fa-circle"></i>
+<span>Social Link</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/image-gallery">
+<i class="fa fa-circle"></i>
+<span>Image Gallery</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/testimonial">
+<i class="fa fa-circle"></i>
+<span>Testimonial</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/language-list">
+<i class="fa fa-circle"></i>
+<span>Languages</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-cog"></i>
+<span>Theme Management</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/theme">Select Theme</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-list-ol"></i>
+<span>Slider &amp; Banner</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/banner">Banner (Home two)</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/slider">Slider (Home one)</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/theme/special-offer">Offer
+(Home two)</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-cube"></i>
+<span>SEO Management</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/home">
+<i class="fa fa-circle"></i>
+<span>Home</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/about-us">
+<i class="fa fa-circle"></i>
+<span>About Us</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/contact">
+<i class="fa fa-circle"></i>
+<span>Contact</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/blog">
+<i class="fa fa-circle"></i>
+<span>Blog</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/all-products">
+<i class="fa fa-circle"></i>
+<span>Products</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/cart">
+<i class="fa fa-circle"></i>
+<span>Cart</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/checkout">
+<i class="fa fa-circle"></i>
+<span>Checkout</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/wishlist">
+<i class="fa fa-circle"></i>
+<span>Wishlist</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/compare">
+<i class="fa fa-circle"></i>
+<span>Compare</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/sign-in">
+<i class="fa fa-circle"></i>
+<span>Sign In</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/sign-up">
+<i class="fa fa-circle"></i>
+<span>Sign Up</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/forget-password">
+<i class="fa fa-circle"></i>
+<span>Forget Password</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/manage-seo/reset-password">
+<i class="fa fa-circle"></i>
+<span>Reset Password</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/pages">
+<i class="fas fa-book"></i>
+<span>Manage Pages</span>
+</a>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fa fa-bars"></i>
+<span>Manage Menus</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/static-menus">
+ <i class="fa fa-circle"></i>
+<span>Static Menus</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/dynamic-menus">
+<i class="fa fa-circle"></i>
+<span>Dynamic Menus</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/submenus">
+<i class="fa fa-circle"></i>
+<span>Submenus</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/sitemap-list">
+<i class="fa fa-sitemap"></i>
+<span>Sitemaps</span>
+</a>
+            </li>
+            <li class="">
+                <a href="https://zairito.zainikthemes.com/admin/payment-gateway">
+<i class="fa fa-money-bill"></i>
+<span>Payment Gateway</span>
+</a>
+            </li>
+            <li class="">
+                <a class="has-arrow" href="#">
+<i class="fas fa-address-book"></i>
+<span>Company</span>
+</a>
+                <ul>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/faq-list">
+<i class="fa fa-circle"></i>
+<span>FAQ</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/company/privacy-policy">
+<i class="fa fa-circle"></i>
+<span>Privacy Policy</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/company/refund-policy">
+<i class="fa fa-circle"></i>
+<span>Refund Policy</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/company/shipping-return">
+<i class="fa fa-circle"></i>
+<span>Shipment &amp; Return</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/company/terms-conditions">
+<i class="fa fa-circle"></i>
+<span>Terms &amp; Condition</span>
+</a>
+                    </li>
+                    <li class="">
+                        <a href="https://zairito.zainikthemes.com/admin/company-story">
+<i class="fa fa-circle"></i>
+<span>Company Story</span>
+</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <header class="header__area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="header__navbar">
+                            <div class="header__navbar__left">
+                                <button class="sidebar-toggler">
+<img src="https://zairito.zainikthemes.com/admin/images/icons/header/bars.svg" alt="">
+</button>
+                                <a href="https://zairito.zainikthemes.com" target="_blank" class="btn btn-primary text-white">Visit Site</a>
+                            </div>
+                            <div class="header__navbar__right">
+                                <ul class="header__menu">
+                                    <li>
+                                        <a href="#" class="btn btn-dropdown user-profile" data-bs-toggle="dropdown">
+<img src="https://zairito.zainikthemes.com/uploaded_files/admin_profile/profile.png" alt="icon">
+</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="https://zairito.zainikthemes.com/admin/profile">
+<img src="https://zairito.zainikthemes.com/admin/images/icons/user.svg" alt="icon">
+<span>Profile</span>
+</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logoutModal">
+<img src="https://zairito.zainikthemes.com/admin/images/icons/logout.svg" alt="icon">
+<span>Logout</span>
+</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content-wrap">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="breadcrumb__content">
+                                <div class="breadcrumb__content__left">
+                                    <div class="breadcrumb__title">
+                                        <h2>Dashboard</h2>
+                                    </div>
+                                </div>
+                                <div class="breadcrumb__content__right">
+                                    <nav aria-label="breadcrumb">
+                                        <ul class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="https://zairito.zainikthemes.com/admin/dashboard">Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Total Sale</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-chart-bar fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Today Order</h2>
+                                    <div class="status__box__data">
+                                        <h2>1</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-chart-bar fa-2x text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>July Sale</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-chart-bar fa-2x text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Yearly Sale</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-chart-bar fa-2x text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Orders</h2>
+                                    <div class="status__box__data">
+                                        <h2>17</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-shopping-cart fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Pending Orders</h2>
+                                    <div class="status__box__data">
+                                        <h2>17</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-shopping-cart fa-2x text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2> Delivered Orders</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-shopping-cart fa-2x text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Returned Orders</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-shopping-cart fa-2x text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Total Earning</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-money-bill-wave fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Today Earning</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-money-bill-wave fa-2x text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>July Earning</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-money-bill-wave fa-2x text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Yearly Earning</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-shopping-cart fa-2x text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Products</h2>
+                                    <div class="status__box__data">
+                                        <h2>11</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-check-circle fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Customers</h2>
+                                    <div class="status__box__data">
+                                        <h2>10</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-check-circle fa-2x text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Categories</h2>
+                                    <div class="status__box__data">
+                                        <h2>10</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-check-circle fa-2x text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Brands</h2>
+                                    <div class="status__box__data">
+                                        <h2>7</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-check-circle fa-2x text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Online Transactions</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-dollar-sign fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Paypal Transactions</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-dollar-sign fa-2x text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Stripe Transactions</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-dollar-sign fa-2x text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Razorpay Transactions</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-dollar-sign fa-2x text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Bank Transactions</h2>
+                                    <div class="status__box__data">
+                                        <h2>$0.00</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-dollar-sign fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Reviews</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-comment-alt fa-2x text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Blogs</h2>
+                                    <div class="status__box__data">
+                                        <h2>6</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-blog fa-2x text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="status__box-3 bg-style">
+                                <div class="item__left">
+                                    <h2>Subscribers</h2>
+                                    <div class="status__box__data">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                                <div class="item__right">
+                                    <div class="status__box__img">
+                                        <i class="fas fa-users fa-2x text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card transactions-chart-card">
+                                <div class="item-top card-header mb-30">
+                                    <h2 class="card-title">Transactions</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="earnSource"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card sales-ratio-chart-card">
+                                <div class="item-top card-header mb-30">
+                                    <h2 class="card-title">Sales Ratio</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="salesRatio"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="item-top card-header mb-30">
+                                    <h2 class="card-title">July Sales</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="multipleLineChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="item-top card-header mb-30">
+                                    <h2 class="card-title">July Earnings</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="multipleLineChart2"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="transaction_pie" data-dt='[76.47058823529412,0,11.76470588235294,0,1700]'></div>
+                    <div id="sales_ratio" data-dt='[0,0]'></div>
+                </div>
+            </div>
+
+            <footer class="footer__area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer__copyright">
+                                <div class="footer__copyright__left">
+                                    <h2>2022 &copy; Zairito</h2>
+                                </div>
+                                <div class="footer__copyright__right">
+                                    <h2>Designed &amp; Developed By Zainiktheme</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary me-2" data-bs-dismiss="modal">Cancel</button>
+                    <a href="https://zairito.zainikthemes.com/admin/logout" class="btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://zairito.zainikthemes.com/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/popper.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/bootstrap.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/backend/vendor/summernote/summernote-bs4.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/backend/js/admin/summernote-init.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/jquery.dataTables.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/custom/data-table-page.js"></script>
+    <script src="https://zairito.zainikthemes.com/backend/vendor/select2/js/select2.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/metisMenu.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/image-preview.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/main.js"></script>
+    <script src="https://zairito.zainikthemes.com/admin/js/custom.js"></script>
+    <script src="https://zairito.zainikthemes.com/backend/plugins/chart.min.js"></script>
+    <script src="https://zairito.zainikthemes.com/backend/js/admin/dashboard.js"></script>
+    <script>
+        multipleLineChart = document.getElementById('multipleLineChart').getContext('2d'),
+            multipleLineChart2 = document.getElementById('multipleLineChart2').getContext('2d')
+
+        var myMultipleLineChart = new Chart(multipleLineChart, {
+            type: 'bar',
+            data: {
+                labels: ['08 Jul', '07 Jul', '06 Jul', '05 Jul', '04 Jul', '03 Jul', '02 Jul', '01 Jul', '30 Jun', '29 Jun', '28 Jun', '27 Jun', '26 Jun', '25 Jun', '24 Jun', '23 Jun', '22 Jun', '21 Jun', '20 Jun', '19 Jun', '18 Jun', '17 Jun', '16 Jun', '15 Jun', '14 Jun', '13 Jun', '12 Jun', '11 Jun', '10 Jun', '09 Jun', ],
+                datasets: [{
+                    label: "Product Sales",
+                    borderColor: "#6777ef",
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#6777ef",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: '#6777ef',
+                    fill: true,
+                    borderWidth: 2,
+                    data: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    bodySpacing: 4,
+                    mode: "nearest",
+                    intersect: 0,
+                    position: "nearest",
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10
+                },
+                layout: {
+                    padding: {
+                        left: 15,
+                        right: 15,
+                        top: 15,
+                        bottom: 15
+                    }
+                }
+            }
+        });
+
+        var myMultipleLineChart2 = new Chart(multipleLineChart2, {
+            type: 'bar',
+            data: {
+                labels: ['08 Jul', '07 Jul', '06 Jul', '05 Jul', '04 Jul', '03 Jul', '02 Jul', '01 Jul', '30 Jun', '29 Jun', '28 Jun', '27 Jun', '26 Jun', '25 Jun', '24 Jun', '23 Jun', '22 Jun', '21 Jun', '20 Jun', '19 Jun', '18 Jun', '17 Jun', '16 Jun', '15 Jun', '14 Jun', '13 Jun', '12 Jun', '11 Jun', '10 Jun', '09 Jun', ],
+                datasets: [{
+                    label: "Earning $",
+                    borderColor: "#66bb6a",
+                    pointBorderColor: "#FFF",
+                    pointBackgroundColor: "#66bb6a",
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 4,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 4,
+                    backgroundColor: '#66bb6a',
+                    fill: true,
+                    borderWidth: 2,
+                    data: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    bodySpacing: 4,
+                    mode: "nearest",
+                    intersect: 0,
+                    position: "nearest",
+                    xPadding: 10,
+                    yPadding: 10,
+                    caretPadding: 10
+                },
+                layout: {
+                    padding: {
+                        left: 15,
+                        right: 15,
+                        top: 15,
+                        bottom: 15
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="https://zairito.zainikthemes.com/vendor/sweetalert/sweetalert.all.js"></script>
+    <div class="js-cookie-consent cookie-consent alert alert-dismissible fade show" role="alert">
+        <div class="main-cookie-content">
+            <p class="cookie-consent__message m-0">
+                Your experience on this site will be improved by allowing cookies.
+            </p>
+            <button class="allow-button primary-btn js-cookie-consent-agree cookie-consent__agree">
+Allow Cookies
+</button>
+        </div>
+        <button type="button" class="btn-close front-close-btn" data-bs-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <script>
+        window.laravelCookieConsent = (function() {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'zairito.zainikthemes.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 1);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value +
+                    ';expires=' + date.toUTCString() +
+                    ';domain=' + COOKIE_DOMAIN +
+                    ';path=/' +
+                    '';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+</body>
+
+</html>

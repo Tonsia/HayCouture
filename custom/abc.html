@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+    <style>
+
+    .mask {
+      -webkit-mask-size: 100%;
+      mask-size: 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;    
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="personalize no_selector ">
+      <div id="available_window" class="image_render woman_dress">
+        <div class="layers viewport overflow-auto" style="top:200px;width: 170px;height: auto;">
+          
+          <!-- Girl Image -->
+          <img src="https://d2yo8p89bpsqlq.cloudfront.net/3d/new_woman/models/2/STD/front/model_front.png" class="" style="z-index: 100;">
+          <img src="https://d2yo8p89bpsqlq.cloudfront.net/3d/new_woman/models/2/STD/front/manos.png" class="" style="z-index: 300;">
+          
+          <!-- Sleeves -->
+          <img src="color1.jpg" style="z-index: 350;-webkit-mask-image: url(pngsrc/sleeves/sleeves_elbow.png);mask-image: url(pngsrc/sleeves/sleeves_elbow.png);" width="129" height="356" class="woman_dress mask" >
+
+          <!-- Neck -->
+          <img src="color1.jpg" style="z-index: 200;-webkit-mask-image: url(pngsrc/neck/necklines_v_neck_deep.png);mask-image: url(pngsrc/neck/necklines_v_neck_deep.png);" width="129" height="356" class="woman_dress mask" >
+
+          <!-- Belly -->
+          <img src="color1.jpg" style="-webkit-mask-image: url(pngsrc/top/top_sheath.png);mask-image: url(pngsrc/top/top_sheath.png);z-index: 150;"  width="129" height="356" class="woman_dress mask">
+
+          <!-- center piece -->
+          <img src="color1.jpg" style="z-index: 149;-webkit-mask-image: url(pngsrc/down/top_sheath+down.png);mask-image: url(pngsrc/down/top_sheath+down.png);" width="129" height="356" class="woman_dress mask" >
+          
+          <!-- bottom -->
+          <img src="1214.jpg" style="z-index: 250;-webkit-mask-image: url(pngsrc/bottom/bottom_pencil_wrapped_3+length_midi.png);mask-image: url(pngsrc/bottom/bottom_pencil_wrapped_3+length_midi.png);" width="129" height="356" class="woman_dress mask" >
+          
+        </div>
+
+      </div>
+     
+    </div>
+    
+    <!-- <img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="top_sheath.png" width="129" height="356"> -->
+
+</body>
+</html>

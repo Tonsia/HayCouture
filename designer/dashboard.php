@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb">
                       <ul class="breadcrumb">
                         <li class="breadcrumb-item">
-                          <a href="http://localhost/proadmin/dashboard.php">Home</a>
+                          <a href="./dashboard.php">Home</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                       </ul>
@@ -122,7 +122,7 @@
                     <h2> Delivered Orders</h2>
                     <div class="status__box__data">
                     <h2><?php include 'db_connect.php'; 
-                          echo $conn->query("SELECT * FROM cart where status=5 ")->num_rows; ?></h2> 
+                          echo $conn->query("SELECT * FROM customorder where status=5 ")->num_rows; ?></h2> 
                     </div>
                   </div>
                   <div class="item__right">
@@ -138,7 +138,7 @@
                     <h2>Returned Orders</h2>
                     <div class="status__box__data">
                     <h2><?php include 'db_connect.php'; 
-                          echo $conn->query("SELECT * FROM cart where status=9 ")->num_rows; ?></h2> 
+                          echo $conn->query("SELECT * FROM customorder where status=9 ")->num_rows; ?></h2> 
                     </div>
                   </div>
                   <div class="item__right">
@@ -211,10 +211,10 @@
               <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="status__box-3 bg-style">
                   <div class="item__left">
-                    <h2>Products</h2>
+                    <h2>Fabrics</h2>
                     <div class="status__box__data">
                     <h2><?php include 'db_connect.php'; 
-                          echo $conn->query("SELECT * FROM products where product_status=1")->num_rows; ?></h2>
+                          echo $conn->query("SELECT * FROM fabric where status=1")->num_rows; ?></h2>
                     </div>
                   </div>
                   <div class="item__right">
@@ -240,13 +240,16 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-6">
+              <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="status__box-3 bg-style">
                   <div class="item__left">
                     <h2>Categories</h2>
                     <div class="status__box__data">
-                    <h2><?php include 'db_connect.php'; 
-                          echo $conn->query("SELECT * FROM category where cat_status=1")->num_rows; ?></h2>
+                    <h2><?php 
+                          //include 'db_connect.php'; 
+                          //echo $conn->query("SELECT * FROM category where cat_status=1")->num_rows; 
+                          ?>
+                    </h2>
                     </div>
                   </div>
                   <div class="item__right">
@@ -255,7 +258,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="status__box-3 bg-style">
                   <div class="item__left">
@@ -346,13 +349,17 @@
                   </div>
                 </div>
               </div> -->
-              <div class="col-lg-3 col-md-6 col-sm-6">
+              <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="status__box-3 bg-style">
                   <div class="item__left">
                     <h2>Reviews</h2>
                     <div class="status__box__data">
-                    <h2><?php include 'db_connect.php'; 
-                          echo $conn->query("SELECT * FROM review where review_status=1")->num_rows; ?></h2>
+                    <h2>
+                      <?php 
+                        //include 'db_connect.php'; 
+                        //echo $conn->query("SELECT * FROM review where review_status=1")->num_rows;
+                      ?>
+                    </h2>
                     </div>
                   </div>
                   <div class="item__right">
@@ -361,7 +368,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="status__box-3 bg-style">
                   <div class="item__left">
