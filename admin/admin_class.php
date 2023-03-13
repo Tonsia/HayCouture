@@ -1307,8 +1307,343 @@ function reviewstatus()
 		return $result;	
 	}
 
+	function addDeliv(){
+		extract($_POST);
+		$result1=$this->db->query("INSERT INTO deliveryperson( delname,pwd,email,delid,mob,addr,licno,status) VALUES (TRIM('$delivname'),' ',TRIM('$delivemail'),' ',TRIM('$delivmob'),TRIM('$delivadr'),TRIM('$delivlic'),1)");
+		echo $this->db->error;
+		$result2=$this->db->query("UPDATE deliveryperson SET delid = concat('HCD',id) where licno = '$delivlic'");
+		$result3=$this->db->query("UPDATE deliveryperson SET pwd = md5(concat('HCD',id)) where licno = '$delivlic'");
+
+		
+	
+		return $result1 * $result2 * $result3;
+
+	}        
 
 	
+	function tabledeliv(){
+
+
+	$result=$this->db->query("SELECT * FROM deliveryperson");
+	$str = '';
+	$i=1;
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$sts="";
+			$id=$row["id"];
+			if($row["status"]==1)
+				$sts='<span class="status active">Active</span>';
+			else
+				$sts='<span class="status blocked">Disabled</span>';
+			$str = $str .
+			'<tr id='.$row["id"].' role="row" class="odd">'.
+			'<td>' .$i. '</td>'.
+				'<td class="sorting_1">' .$row["delname"]. '</td>'.
+				'<td>' .$row["delid"]. '</td>'.
+				'<td class="sorting_1">' .$row["email"]. '</td>'.
+				'<td>' .$row["mob"]. '</td>'.
+				'<td class="sorting_1">' .$row["addr"]. '</td>'.
+				'<td>' .$row["licno"]. '</td>'.
+				'<td>'.$sts.'</td>'.
+				'<td>
+					<div class="action__buttons">
+						
+						<button onclick="fn1('.$id.')" type="button" class="fas fa-pen-to-square btnhere" title="Edit"></button>
+						
+						<a class="btn-action toggle" title="Toggle">
+							<button onclick="fn2('.$id.')" type="button"  class="fas fa-toggle-on" title="Toggle"></button>
+						</a>
+
+						<!-- <a class="btn-action delete" title="Delete">
+							<i class="fas fa-trash-alt"></i>
+						</a> -->
+					</div>
+				</td>
+			</tr>';
+			$i++;
+		}
+	}
+
+	return $str;
+}
+
+function editDeliv()
+{
+
+	$delivid=$_POST['id'];
+	$qry = $this->db->query("SELECT * FROM deliveryperson where id='$delivid'");
+	$str = '';
+	if ($qry->num_rows > 0) 
+	{
+		while($row = $qry->fetch_assoc()) 
+		{
+			$name=$row["delname"];
+			$email=$row["email"];
+			$mob=$row["mob"];
+			$addr=$row["addr"];
+			$licno=$row["licno"];
+		
+			
+			$str=$name."#".$email."#".$mob."#".$addr."#".$licno;
+		}
+	}
+	return $str;
+
+
+
+}
+	
+
+
+function delivupdate()
+{
+	$delivname=$_POST['delivname'];
+	$delivemail=$_POST['delivemail'];
+	$delivmob=$_POST['delivmob'];
+	$delivadr=$_POST['delivadr'];
+	$delivlic=$_POST['delivlic'];
+	$id=$_POST['deliveditid'];
+	$qry = $this->db->query("UPDATE deliveryperson SET delname='$delivname', email='$delivemail', mob='$delivmob', addr='$delivadr', licno='$delivlic' WHERE id='$id'");
+	echo $this->db->error;
+	return $qry;
+
+}
+
+function delivstatus()
+{
+	$delivid=$_POST['delivid'];
+	$qry = $this->db->query("SELECT * FROM deliveryperson where id='$delivid'");
+	$res = $qry->fetch_array()[7];
+	if($res==1){
+		$qry2 = $this->db->query("UPDATE deliveryperson SET status=2 WHERE id='$delivid'");
+	}
+	else if($res==2){
+		$qry2 = $this->db->query("UPDATE deliveryperson SET status=1 WHERE id='$delivid'");
+	}
+	return $qry2;
+}
+
+
+
+function addjob()
+{
+	include 'db_connect.php';
+	extract($_POST);
+	// $sql=$this->db->query("INSERT INTO jobs (jobtitle, jobid, jobdesc, jobreq, status) 
+	// 							VALUES ('$jobtitle', NULL, '$jobdescription', '$par1', 1);
+	// 							SET @jobid = CONCAT('HCJ', LAST_INSERT_ID());
+	// 							UPDATE jobs SET jobid = @jobid WHERE id = LAST_INSERT_ID();");
+
+	// $result2=$this->db->query("UPDATE jobs SET jobid = concat('HCJ',id) where licno = '$delivlic'");
+	// $result3=$this->db->query("UPDATE deliveryperson SET pwd = md5(concat('HCD',id)) where licno = '$delivlic'");
+
+	// if ($conn -> multi_query($sql)) {
+	// 	do {
+	// 	  // Store first result set
+	// 	  if ($result = $mysqli -> store_result()) {
+	// 		while ($row = $result -> fetch_row()) {
+	// 		  printf("%s\n", $row[0]);
+	// 		}
+	// 	   $result -> free_result();
+	// 	  }
+	// 	  // if there are more result-sets, the print a divider
+	// 	  if ($mysqli -> more_results()) {
+	// 		printf("-------------\n");
+	// 	  }
+	// 	   //Prepare next result set
+	// 	} while ($mysqli -> next_result());
+	//   }
+	// echo $this->db->error;
+						
+	$sql1 = "INSERT INTO jobs (jobtitle, jobid, jobdesc, jobreq, status) VALUES (TRIM('$jobtitle'), ' ', TRIM('$jobdescription'), '$par1', 1)";
+    $q1=$conn->query($sql1); // execute the first query
+
+    if ($conn->error) {
+        // query failed
+        echo "Error: " . $conn->error;
+    } else {
+        // query successfully executed
+        $jobid = "HCJ" . $conn->insert_id; // get the ID of the last inserted record and concatenate "HCJ" to it
+        $sql2 = "UPDATE jobs SET jobid = '$jobid' WHERE id = " . $conn->insert_id;
+        $q2=$conn->query($sql2); // execute the second query
+
+        if ($conn->error) {
+            // query failed
+            echo "Error: " . $conn->error;
+        } else {
+            return $q1*$q2;
+        }
+    }
+
+}
+
+
+function tablejob()
+{
+
+	$result=$this->db->query("SELECT * FROM jobs");
+	$str = '';
+	$i=1;
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$sts="";
+			$id=$row["id"];
+			if($row["status"]==1)
+				$sts='<span class="status active">Active</span>';
+			else
+				$sts='<span class="status blocked">Disabled</span>';
+			$str = $str .
+			'<tr id='.$row["id"].' role="row" class="odd" >'.
+			'<td>' .$i. '</td>'.
+				'<td class="sorting_1" onclick="window.location.href =\'jobcandidatelist.php?jobid='.$row["jobid"].'\'">' .$row["jobtitle"]. '</td>'.
+				'<td>' .$row["jobid"]. '</td>'.
+				'<td class="sorting_1">' .$row["jobdesc"]. '</td>'.
+				'<td>' .$row["jobreq"]. '</td>'.
+				'<td>'.$sts.'</td>'.
+				'<td>
+					<div class="action__buttons">
+						
+						<button onclick="fn1('.$id.')" type="button" class="fas fa-pen-to-square btnhere" title="Edit"></button>
+						
+						<a class="btn-action toggle" title="Toggle">
+							<button onclick="fn2('.$id.')" type="button"  class="fas fa-toggle-on" title="Toggle"></button>
+						</a>
+
+						<!-- <a class="btn-action delete" title="Delete">
+							<i class="fas fa-trash-alt"></i>
+						</a> -->
+					</div>
+				</td>
+			</tr>';
+			$i++;
+		}
+	}
+
+	return $str;
+
+}
+
+
+
+function jobupdate(){
+
+	extract($_POST);
+	
+	$qry = $this->db->query("UPDATE jobs SET jobtitle=TRIM('$jobtitle'), jobdesc=TRIM('$jobdescription'), jobreq='$par1' WHERE id='$jobid'");
+	
+	return $qry;
+
+
+}
+
+function jobedit()
+	{
+        $id=$_POST['id'];
+		$qry = $this->db->query("SELECT * FROM jobs where id='$id'");
+		$str = '';
+		if ($qry->num_rows > 0) 
+		{
+			while($row = $qry->fetch_assoc()) 
+			{
+				$jobtitle=$row["jobtitle"];
+				$jobdesc=$row["jobdesc"];
+				$jobreq=$row["jobreq"];
+				$jobreq=str_replace(",","-",$jobreq);
+				// echo $jobreq;
+				$str=$jobtitle."#".$jobdesc."#".$jobreq;
+			}
+		}
+		return $str;
+	}
+
+function jobstatus()
+{
+		$jobid=$_POST['jobid'];
+		$qry = $this->db->query("SELECT * FROM jobs where id='$jobid'");
+		$res = $qry->fetch_array()[5];
+		if($res==1){
+			$qry2 = $this->db->query("UPDATE jobs SET status=2 WHERE id='$jobid'");
+		}
+		else if($res==2){
+			$qry2 = $this->db->query("UPDATE jobs SET status=1 WHERE id='$jobid'");
+		}
+		return $qry2;
+}
+
+function tablejobcandidates(){
+	extract($_POST);
+	$result=$this->db->query("SELECT * FROM cv  where jobid = '$jobid'");
+	
+	$str = '';
+	$i=1;
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$rid = $row['userid'];
+			$qry = $this->db->query("SELECT * FROM registration where reg_id='$rid'");$row1 = $qry->fetch_array();$str1 =$row1["reg_name"]; 
+			$sts="";
+			$id=$row["id"];
+			if($row["status"]==1)
+				$sts='<span class="status active">Active</span>';
+			else
+				$sts='<span class="status blocked">Disabled</span>';
+			$str = $str .
+			'<tr id='.$row["id"].' role="row" class="odd" >'.
+			'<td>' .$i. '</td>'.
+				'<td class="sorting_1" onclick="window.location.href =\'jobcandidatelist.php?jobid='.$row["jobid"].'\'">'.$str1.'</td>'.
+				'<td>' .$row["userid"]. '</td>'.
+				'<td class="sorting_1">' .$row["cv"]. '</td>'.
+				'<td>'.$sts.'</td>'.
+				'<td>
+					<div class="action__buttons">
+						
+						<a class="btn-action toggle" title="Toggle">
+							<button onclick="fn2('.$id.')" type="button"  class="fas fa-toggle-on" title="Toggle"></button>
+						</a>
+
+						<!-- <a class="btn-action delete" title="Delete">
+							<i class="fas fa-trash-alt"></i>
+						</a> -->
+					</div>
+				</td>
+			</tr>';
+			$i++;
+		}
+	}
+
+	return $str;
+}
+
+
+function getjobdet(){
+	extract($_POST);
+	$qry=$this->db->query("SELECT * FROM cv  where jobid = '$jobid'");
+	$str = '';
+	if ($qry->num_rows > 0) 
+	{
+		while($row = $qry->fetch_assoc()) 
+		{
+			$str .= $row["cv"].",";
+		}
+	}
+	$qry1=$this->db->query("SELECT * FROM jobs  where jobid = '$jobid'");$row1 = $qry1->fetch_array();$str1 =$row1["jobreq"]; 
+	return $str."#".$str1;
+}
+
+
+function updaterank(){
+	extract($_POST);
+	$arr = explode('#', $strinfo);
+	foreach ($arr as $value) {
+		$sub_arr = explode("-", $value);
+		$filename = $sub_arr[0];
+		$count = $sub_arr[1];
+		$qry1=$this->db->query("SELECT * FROM cv  where cv = '$filename'");$row1 = $qry1->fetch_array();$str1 =$row1["id"];
+		$qry2=$this->db->query("INSERT INTO cvrank(cvid,rank) VALUES ('$filename','$count')");
+	}
+	return 1;
+}
+
+
 }
 ?>
 	

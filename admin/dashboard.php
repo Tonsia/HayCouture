@@ -447,7 +447,8 @@
             <div id="sales_ratio" data-dt='[0,0]'></div> -->
           </div>
         </div>
-
+      
+        
 <?php include './master.foot.php';?>
 
 <script src="./assets/backend/plugins/chart.min.js"></script>

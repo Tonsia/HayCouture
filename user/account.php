@@ -1,6 +1,6 @@
 <?php include 'header.php' ;
     if(!isset($_SESSION['regid'])){
-        echo '<script type="text/javascript"> window.location.href="../pro/signin.php"; </script>';
+        echo '<script type="text/javascript"> window.location.href="../auth/signin.php"; </script>';
     }
 ?>
         <!-- mobile-menu-area area start here  -->
@@ -167,10 +167,26 @@
                                     </div>
                                 </a>
                                 </div>
-                               <center>
-                                <div class="col-lg-4 col-md-4 col-sm-6">
+
+                                
+                                <div class="col-lg-4 col-md-4 col-sm-6  mx-auto">
+                                    <a href="jobs.php">
+                                        <div class="single-contact-info border-0 text-center ">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="orange" class="bi bi-briefcase contact-info-icon" viewBox="0 0 16 16">
+                                            <path d="M.5 3.5A1.5 1.5 0 0 1 2 2h12a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H2A1.5 1.5 0 0 1 .5 12v-9zm1 0v9a.5.5 0 0 0 .5.5h12a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0-.5.5z"/>
+                                            <path d="M4 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm8 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                                            <path d="M2 3.5h12v-1H2v1z"/>
+                                        </svg>
+                                        <h3 class="contact-info-title">Career with us</h3>
+                                        <p class="contact-info-content">Apply here to join our team</p>
+                                        </div>
+                                    </a>
+                                    </div>
+
+                    
+                                <div class="col-lg-4 col-md-4 col-sm-6 mx-auto">
                                     <a href="wishlist.php">
-                                        <div class="single-contact-info border-0 text-center">
+                                        <div class="single-contact-info text-center border-0 ">
                                             <img class="contact-info-icon" src="assets/images/contact-info-1.png" alt="contact-info">
                                             <h3 class="contact-info-title">Wishlist</h3>
                                             <p class="contact-info-content">Click Here to view your wishlist</p>
@@ -178,7 +194,8 @@
                                         </div>
                                     </a>
                                 </div>
-                            </center>
+                                
+                            
                             </div>
 
                         </div>

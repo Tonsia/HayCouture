@@ -910,7 +910,7 @@ $(document).ready(function() {
                         }
                         <?php 
                         if(!isset($_SESSION['regid'])){
-                            echo 'window.location.href="../pro/signin.php";';
+                            echo 'window.location.href="../auth/signin.php";';
                         }?>
                     
                        

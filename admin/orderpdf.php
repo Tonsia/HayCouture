@@ -183,6 +183,7 @@ if ($order->num_rows > 0) {
 $pdf->setFont('helvetica', 'B', 22);
 $pdf->Write(0, "INVOICE", '', 0, 'C', true, 0, false, false, 0);
 $mydate=getdate(date("U"));
+
 $html = '
 <style>
 table {
@@ -315,7 +316,7 @@ table th {
                 <tr class="metadata-date">
                     
                 <td style="text-align: left;border: none;">
-                    <img  style="align:right;width:70px;height:65px;" src="../verify.png">
+       
                     </td>
 
                     <td style="text-align: right;border: none;">
@@ -334,9 +335,22 @@ table th {
         </div>
     </div>
 ';
+$style = array(
+    'border' => 2,
+    'vpadding' => 'auto',
+    'hpadding' => 'auto',
+    'fgcolor' => array(0,0,0),
+    'bgcolor' => false, //array(255,255,255)
+    'module_width' => 1, // width of a single module in points
+    'module_height' => 1 // height of a single module in points
+);
+
+
+
 
 $pdf->setFont('helvetica', 'B', 12);
 $pdf->writeHTML($html, true, false, true, false, '');
+$pdf->write2DBarcode($paymentid, 'QRCODE,H', 20, 210, 40, 40, $style, 'N');
 //$pdf->writeHTML('<img  style="align:right;width:70px;height:65px;" src="../verify.png">', true, false, true, false, '');
 //$pdf->Image('../verify.png',$width = 10, $height = 10);
 // Output the PDF file

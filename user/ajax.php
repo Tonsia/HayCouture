@@ -337,6 +337,13 @@ if($action == 'outofstock')
 		echo $outofstock;
 }
 
+if($action == 'addcv')
+{
+	$addcv = $crud->addcv(); 
+	if($addcv)
+		echo $addcv;
+}
+
 
 
 ?>

@@ -1,6 +1,6 @@
 <?php include 'header.php';
     if(!isset($_SESSION['regid'])){
-        echo '<script type="text/javascript"> window.location.href="../pro/signin.php"; </script>';
+        echo '<script type="text/javascript"> window.location.href="../auth/signin.php"; </script>';
     }
 ?>
         <!-- mobile-menu-area area start here  -->
@@ -245,25 +245,24 @@
                                             $status = $rowc['status'];
                                             
                                             if($status==3){
-                                                $stat = '<button class="btn btn-secondary btn-lg m-5" title="Processing" disabled>Processing</button>';
+                                                $stat = '<button class="btn btn-secondary btn-lg m-5" title="Processing" disabled>Shipped</button>';
                                             }else if($status==5){
-                                                $stat = '<button class="btn btn-success btn-lg m-2" title="Delivered">Delivered</button>';
-
+                                                $stat = '<button class="btn btn-success btn-lg m-2" title="Delivered">In Transit</button>';
                                             }
                                             else if($status==1){
                                                 $stat = '<button class="btn btn-warning btn-lg m-5" title="Delete Item" disabled>Order Placed</button>';
                                             }
                                             else if($status==2){
-                                                $stat = '<button class="btn btn-warning btn-lg m-5" title="Delete Item" disabled>Pending</button>';
+                                                $stat = '<button class="btn btn-warning btn-lg m-5" title="Delete Item" disabled>Confirmed</button>';
                                             }
                                             else if($status==4){
-                                                $stat = '<button class="btn btn-info btn-lg m-5" title="Delete Item" disabled>Shipped</button>';
+                                                $stat = '<button class="btn btn-info btn-lg m-5" title="Delete Item" disabled>Picked Up</button>';
                                             }
                                             else if($status==9){
                                                 $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Returned</button>';
                                             }
                                             else if($status==6){
-                                                $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Rejected</button>';
+                                                $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Delivered</button>';
                                             }
 
                                             
@@ -326,9 +325,9 @@
                                             $qry5=$conn->query("SELECT * FROM color_details where product_id='$productid' AND color_id='$color_id'"); $row5=$qry5->fetch_array();
 
                                             if($status==3){
-                                                $stat = '<button class="btn btn-secondary btn-lg m-5" title="Processing" disabled>Processing</button>';
+                                                $stat = '<button class="btn btn-secondary btn-lg m-5" title="Processing" disabled>Shipped</button>';
                                                 $stat2 = '';
-                                            }else if($status==5){
+                                            }else if($status==6){
                                                 $stat = '<button class="btn btn-success btn-lg m-2" title="Delivered">Delivered</button>';
                                                 $stat2 = '<button onclick="reviewfn('."'".$productid."'".')" class="btn btn-outline-secondary btn-lg m-2" title="Delivered">Write A Review</button><br>
                                                  <button id="b7" onclick="returnorder('."'".$productid."'".')" class=" return btn btn-outline-danger btn-lg m-2" title="Delivered">Return Order</button>';
@@ -336,19 +335,23 @@
 
                                             }
                                             else if($status==2){
-                                                $stat = '<button class="btn btn-warning btn-lg m-5" title="Delete Item" disabled>Pending</button>';
+                                                $stat = '<button class="btn btn-warning btn-lg m-5" title="Delete Item" disabled>Confirmed</button>';
                                                 $stat2 = '';
                                             }
                                             else if($status==4){
-                                                $stat = '<button class="btn btn-info btn-lg m-5" title="Delete Item" disabled>Shipped</button>';
+                                                $stat = '<button class="btn btn-info btn-lg m-5" title="Delete Item" disabled>Picked Up</button>';
                                                 $stat2 = '';
                                             }
                                             else if($status==9){
                                                 $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Returned</button>';
                                                 $stat2 = '';
                                             }
-                                            else if($status==6){
-                                                $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Rejected</button>';
+                                            else if($status==7){
+                                                $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Cancelled</button>';
+                                                $stat2 = '';
+                                            }
+                                            else if($status==5){
+                                                $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>In Transit</button>';
                                                 $stat2 = '';
                                             }
 

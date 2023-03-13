@@ -103,8 +103,9 @@
         </li>
         <li class="">
           <a class="has-arrow" href="#">
-            <i class="fab fa-product-hunt"></i>
-            <span>Customer Management</span>
+            <!-- <i class="fab fa-product-hunt"></i> -->
+            <i class="fa-solid fa-users"></i>
+            <span>Manage Customers</span>
           </a>
           <ul>
             <li class="">
@@ -168,8 +169,9 @@
         </li>
         <li class="">
           <a class="has-arrow" href="#">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Custom Orders</span>
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            <i class="fa-sharp fa-solid fa-bag-shopping"></i>
+                        <span>Custom Orders</span>
           </a>
           <ul>
             <li class="">
@@ -183,8 +185,9 @@
         </li>
         <li class="">
           <a class="has-arrow" href="#">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Stock Management</span>
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            <i class="fa-sharp fa-solid fa-cubes"></i>     
+              <span>Stock Management</span>
           </a>
           <ul>
             <li class="">
@@ -260,10 +263,35 @@
         </li>
         <li class="">
           <a class="has-arrow" href="review.php">
-          <i class="fas fa-list"></i>
+          <!-- <i class="fas fa-list"></i> -->
+          <i class="fa-sharp fa-solid fa-paperclip"></i>
             <span>Manage Reviews</span>
           </a>
         </li>
+        <li class="">
+          <a class="has-arrow" href="jobs.php">
+          <!-- <i class="fas fa-list"></i> -->
+          <i class="fa-sharp fa-solid fa-briefcase"></i>
+            <span>Manage Jobs</span>
+          </a>
+        </li>
+        <li class="">
+          <a class="has-arrow" href="#">
+          <i class="fa-solid fa-truck"></i>
+            <span>Manage Delivery</span>
+          </a>
+          <ul>
+            <li class="">
+              <a href="./delivCreate.php">
+                <i class="fa fa-circle"></i>
+                <span>Add Delivery Person</span>
+              </a>
+              <a href="./deliv.php">
+                <i class="fa fa-circle"></i>
+                <span>List Delivery Person</span>
+              </a>
+        </li>
+
         <!-- <li class="">
           <a href="./admin/advertise">
             <i class="fas fa-ad"></i>

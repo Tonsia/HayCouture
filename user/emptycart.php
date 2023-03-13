@@ -1,6 +1,6 @@
 <?php include 'header.php' ;
     if(!isset($_SESSION['regid'])){
-        echo '<script type="text/javascript"> window.location.href="../pro/signin.php"; </script>';
+        echo '<script type="text/javascript"> window.location.href="../auth/signin.php"; </script>';
     }
 ?>
         <!-- mobile-menu-area area start here  -->

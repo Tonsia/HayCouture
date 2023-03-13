@@ -839,8 +839,8 @@
                                             <!-- <li class="menu-item"><a class="menu-link" href="blog.html">Blog</a></li>
                                             <li class="menu-item"><a class="menu-link" href="shop-grid.html">Weekly Deals</a></li> -->
                                             <li class="menu-item"><a class="menu-link" href="cart.php">Cart</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="../pro/signin.php">Sign In</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="../pro/signup.php">Sign Up</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="../auth/signin.php">Sign In</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="../auth/signup.php">Sign Up</a></li>
                                         </ul>
                                     </div>
                                 </div>

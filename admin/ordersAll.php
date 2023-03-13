@@ -38,7 +38,7 @@
                             <th>Payment ID</th>
                             <th>Created At</th>
                             <th>Payment Method</th>
-                            <th>Status</th>
+                            <th style="width:90px;">Status</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -68,16 +68,31 @@
                                             $qry6=$conn->query("SELECT * FROM registration where reg_id ='$userid'"); $row6=$qry6->fetch_array();
 
                                             $statusstr = '';
+                                            // if($status==2){
+                                            //     $statusstr = "Pending";
+                                            // }else if($status==3){
+                                            //     $statusstr = "Processing";
+                                            // }else if($status==4){
+                                            //     $statusstr = "Shipped";
+                                            // }else if($status==5){
+                                            //     $statusstr = "Delivered";
+                                            // }else if($status==6){
+                                            //     $statusstr = "Refunded";
+                                            // }else if($status==9){
+                                            //     $statusstr = "Returned";
+                                            // }
                                             if($status==2){
-                                                $statusstr = "Pending";
+                                                $statusstr = "Confirmed";
                                             }else if($status==3){
-                                                $statusstr = "Processing";
-                                            }else if($status==4){
                                                 $statusstr = "Shipped";
+                                            }else if($status==4){
+                                                $statusstr = "PickedUp";
                                             }else if($status==5){
-                                                $statusstr = "Delivered";
+                                                $statusstr = "In transit";
                                             }else if($status==6){
-                                                $statusstr = "Refunded";
+                                                $statusstr = "Delivered";
+                                            }else if($status==7){
+                                                $statusstr = "Cancelled";
                                             }else if($status==9){
                                                 $statusstr = "Returned";
                                             }
@@ -145,23 +160,27 @@
         <div class="modal-body">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="2" checked>
-              <label class="form-check-label" for="inlineRadio1">Pending</label>
+              <label class="form-check-label" for="inlineRadio1">Confirmed</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="3">
-              <label class="form-check-label" for="inlineRadio2">Processing</label>
+              <label class="form-check-label" for="inlineRadio2">Shipped</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="4" >
-              <label class="form-check-label" for="inlineRadio3">Shipped</label>
+              <label class="form-check-label" for="inlineRadio3">Picked Up</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="5">
-              <label class="form-check-label" for="inlineRadio2">Delivered</label>
+              <label class="form-check-label" for="inlineRadio2">In Transit</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="6" >
-              <label class="form-check-label" for="inlineRadio3">Refunded</label>
+              <label class="form-check-label" for="inlineRadio3">Delivered</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="7" >
+              <label class="form-check-label" for="inlineRadio3">Rejected</label>
             </div>
         </div>
         

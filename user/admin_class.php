@@ -2230,6 +2230,26 @@ function similar(){
             }
         }
     }
+
+
+    function addcv()
+    {
+        extract($_POST);
+
+        $jobid = $_POST['jobId'];
+        $regid = $_POST['regId'];
+        $target_dir = "assets/uploaded_files/resume/";
+
+        $newname = $jobid . "_" . $regid . ".pdf";
+        $cv_path = $target_dir . $newname;
+        move_uploaded_file($_FILES['file']['tmp_name'], $cv_path);
+
+        $qry = $this->db->query("INSERT INTO cv(userid, jobid, cv,status) VALUES ('$regid','$jobid','$newname','1')");
+       
+		return $qry;
+        
+
+}
     
     
     

@@ -322,11 +322,84 @@ if($action == 'customorderchangestatus'){
 		echo $customorderchangestatus;
 }
 
+if($action == 'addDeliv'){
+	$addDeliv = $crud->addDeliv(); 
+	if($addDeliv)
+		echo $addDeliv;
+}
+
+if($action == 'tabledeliv'){
+	$tabledeliv = $crud->tabledeliv(); 
+	if($tabledeliv)
+		echo $tabledeliv;
+}
+
+if($action == 'editDeliv'){
+	$editDeliv = $crud->editDeliv(); 
+	if($editDeliv)
+		echo $editDeliv;
+}
+
+if($action == 'delivupdate'){
+	$delivupdate = $crud->delivupdate(); 
+	if($delivupdate)
+		echo $delivupdate;
+}
+
+if($action == 'delivstatus'){
+	$delivstatus = $crud->delivstatus(); 
+	if($delivstatus)
+		echo $delivstatus;
+}
+
+if($action == 'addjob'){
+	$addjob = $crud->addjob(); 
+	if($addjob)
+		echo $addjob;
+}
+
+if($action == 'tablejob'){
+	$tablejob = $crud->tablejob(); 
+	if($tablejob)
+		echo $tablejob;
+}
 
 
+if($action == 'jobupdate'){
+	$jobupdate = $crud->jobupdate(); 
+	if($jobupdate)
+		echo $jobupdate;
+}
 
+if($action == 'jobedit'){
+	$jobedit = $crud->jobedit(); 
+	if($jobedit)
+		echo $jobedit;
+}
 
+if($action == 'jobstatus'){
+	$jobstatus = $crud->jobstatus(); 
+	if($jobstatus)
+		echo $jobstatus;
+}
 
+if($action == 'tablejobcandidates'){
+	$tablejobcandidates = $crud->tablejobcandidates(); 
+	if($tablejobcandidates)
+		echo $tablejobcandidates;
+}
+
+if($action == 'getjobdet'){
+	$getjobdet = $crud->getjobdet(); 
+	if($getjobdet)
+		echo $getjobdet;
+}
+
+if($action == 'updaterank'){
+	$updaterank = $crud->updaterank(); 
+	if($updaterank)
+		echo $updaterank;
+}
 
 
 

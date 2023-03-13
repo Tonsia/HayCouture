@@ -334,9 +334,19 @@ table th {
         </div>
     </div>
 ';
+$style = array(
+    'border' => 2,
+    'vpadding' => 'auto',
+    'hpadding' => 'auto',
+    'fgcolor' => array(0,0,0),
+    'bgcolor' => false, //array(255,255,255)
+    'module_width' => 1, // width of a single module in points
+    'module_height' => 1 // height of a single module in points
+);
 
 $pdf->setFont('helvetica', 'B', 12);
 $pdf->writeHTML($html, true, false, true, false, '');
+$pdf->write2DBarcode($paymentid, 'QRCODE,H', 20, 225, 40, 40, $style, 'N');
 
 //$pdf->Image('../verify.png',$width = 10, $height = 10);
 // Output the PDF file
