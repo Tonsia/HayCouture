@@ -17,7 +17,7 @@ Class Action {
         $email=$_POST['email'];
         $password=$_POST['pwd'];
 		$encyp_pwd=md5($password);
-		$qry = $this->db->query("SELECT * FROM registration WHERE reg_email = '$email' and reg_pwd = '$encyp_pwd'");
+		$qry = $this->db->query("SELECT * FROM registration WHERE reg_email = '$email' and reg_pwd = '$encyp_pwd' and reg_status=1");
 		$username='';
 		$str = '';
 		if($qry->num_rows > 0)

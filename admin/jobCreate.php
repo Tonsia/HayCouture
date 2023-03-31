@@ -50,6 +50,10 @@
                                                         </select>
                                                 <!-- <textarea name="jobrequirements" class="lol" id="jobrequirements" maxlength="499" required ></textarea> -->
                                             </div>
+                                            <div class="input__group mb-25">
+                                                <label for="exampleInputEmail1">Deadline of Submissions</label>
+                                                <input type="date" id="expire_date" name="expire_date" required>
+                                            </div>
                                             <div class="input__button">
                                                 <button type="submit" class="btn btn-blue">Add</button>
                                             </div>
@@ -71,6 +75,14 @@
     </script>
      <script type="text/javascript">
         var status=1;
+        let today = new Date();
+                let dd = String(today.getDate()).padStart(2, '0');
+                let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                let yyyy = today.getFullYear();
+
+                today = yyyy + '-' + mm + '-' + dd;
+
+                document.getElementById("expire_date").setAttribute("min", today);
         $(document).ready(function() {
              $("#s").select2({
                 tags: true
@@ -112,6 +124,7 @@
                 let jobdescription = document.getElementById("jobdescription").value;
                 let titleValid = /^[a-zA-Z]+([a-zA-Z ]*)$/.test(jobtitle.trim());
                 
+
                 if (!titleValid) {
                     event.preventDefault();
                     Swal.fire({

@@ -2242,14 +2242,63 @@ function similar(){
 
         $newname = $jobid . "_" . $regid . ".pdf";
         $cv_path = $target_dir . $newname;
+        if(file_exists($cv_path)){
+            unlink($cv_path);
+        }
         move_uploaded_file($_FILES['file']['tmp_name'], $cv_path);
 
-        $qry = $this->db->query("INSERT INTO cv(userid, jobid, cv,status) VALUES ('$regid','$jobid','$newname','1')");
+        $qry = $this->db->query("INSERT INTO cv(userid, jobid, cv) VALUES ('$regid','$jobid','$newname')");
        
-		return $qry;
-        
+		return $qry."#".$newname;    
+    }
 
-}
+    function updatecv()
+    {
+        extract($_POST);
+
+        $jobid = $_POST['jobId'];
+        $regid = $_POST['regId'];
+        $target_dir = "assets/uploaded_files/resume/";
+        
+        $newname = $jobid . "_" . $regid . ".pdf";
+        $cv_path = $target_dir . $newname;
+        if(file_exists($cv_path)){
+            unlink($cv_path);
+        }
+        move_uploaded_file($_FILES['file']['tmp_name'], $cv_path);       
+		return "1"."#".$newname;    
+    }
+
+    function deletecv()
+    {
+        extract($_POST);
+        $qry=$this->db->query("DELETE FROM cv WHERE id = '$id'");
+        return $qry;
+    }
+
+    
+
+
+    function getjobdet(){
+        extract($_POST);
+        $qry=$this->db->query("SELECT * FROM cv  where jobid = '$jobid'");
+        $str = '';
+        if ($qry->num_rows > 0) 
+        {
+            while($row = $qry->fetch_assoc()) 
+            {
+                $str .= $row["cv"].",";
+            }
+        }
+        $qry1=$this->db->query("SELECT * FROM jobs  where jobid = '$jobid'");$row1 = $qry1->fetch_array();$str1 =$row1["jobreq"]; 
+        return $str."#".$str1;
+    }
+
+    function updaterank(){
+        extract($_POST);
+        $qry1=$this->db->query("UPDATE cv SET percentage='$rank' WHERE cv = '$fname'");
+        return $qry1;
+    }
     
     
     

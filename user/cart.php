@@ -387,6 +387,7 @@
 
 
                 console.log(a.previousElementSibling.value);
+                
                 var limit = 0;
                 $.ajax({
                     url: 'ajax.php?action=stockcheckbasedoncartid',
@@ -395,7 +396,9 @@
                        cartid:e
                     },
                     success: function(response){
-                        if(a.previousElementSibling.value>response){
+                        //alert(response)
+                        //alert(a.previousElementSibling.value);
+                        if(parseInt(a.previousElementSibling.value)>response){
                             a.previousElementSibling.value = a.previousElementSibling.value - 1;
                             console.log(limit)
                             Swal.fire({

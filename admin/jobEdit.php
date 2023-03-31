@@ -50,7 +50,10 @@
                                                 </select>
                                                 <!-- <textarea name="jobrequirements" class="lol" id="jobrequirements" maxlength="499" required ></textarea> -->
                                             </div>
-                                            
+                                            <div class="input__group mb-25">
+                                                <label for="exampleInputEmail1">Deadline of Submissions</label>
+                                                <input type="date" id="expire_date" name="expire_date" required>
+                                            </div>
                                      
                                      <input type="hidden" id="jobid" name="jobid" value="<?php echo $_GET['id'] ?> ">
 
@@ -70,9 +73,9 @@
 </div>
 <?php include './js.php';?>
 <script type="text/javascript">
-   
-$(document).ready(function() {
 
+$(document).ready(function() {
+                
     $("#s").select2({
                 tags: true
         });
@@ -148,12 +151,22 @@ $(document).ready(function() {
             },
             success: function(response)
             {
+                // document.write(response);
                 var data=response.split("#");
                 var data2=data[2].split("-");
-                // document.write(data);
-                console.log(data);
+                // document.write(data[3]);
+                // console.log(data);
                 document.getElementById("jobtitle").value=data[0].trim();
                 document.getElementById("jobdescription").value=data[1].trim();
+                document.getElementById("expire_date").value=data[3].trim();
+                let today = new Date();
+                let dd = String(today.getDate()).padStart(2, '0');
+                let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                let yyyy = today.getFullYear();
+
+                today = yyyy + '-' + mm + '-' + dd;
+
+                document.getElementById("expire_date").setAttribute("min", today);
                 console.log(data2);
                 for (let i = 0; i < data2.length; i++) {
                 const newOption = document.createElement("option");

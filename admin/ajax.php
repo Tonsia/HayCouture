@@ -402,6 +402,13 @@ if($action == 'updaterank'){
 }
 
 
+if($action == 'jobsts'){
+	$jobsts = $crud->jobsts(); 
+	if($jobsts)
+		echo $jobsts;
+}
+
+
 
 ?>
 

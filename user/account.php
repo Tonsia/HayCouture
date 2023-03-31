@@ -182,6 +182,17 @@
                                         </div>
                                     </a>
                                     </div>
+                                
+                                     <div class="col-lg-4 col-md-4 col-sm-6  mx-auto">
+                                    <a href="appliedjobs.php">
+                                        <div class="single-contact-info border-0 text-center ">
+                                        <img class="contact-info-icon" src="assets/images/contact-info-3.png" alt="contact-info">
+
+                                        <h3 class="contact-info-title">Applied Jobs</h3>
+                                        <p class="contact-info-content">Click Here to view already applied jobs</p>
+                                        </div>
+                                    </a>
+                                    </div> 
 
                     
                                 <div class="col-lg-4 col-md-4 col-sm-6 mx-auto">

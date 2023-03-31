@@ -344,6 +344,31 @@ if($action == 'addcv')
 		echo $addcv;
 }
 
+if($action == 'updatecv')
+{
+	$updatecv = $crud->updatecv(); 
+	if($updatecv)
+		echo $updatecv;
+}
+
+if($action == 'deletecv')
+{
+	$deletecv = $crud->deletecv(); 
+	if($deletecv)
+		echo $deletecv;
+}
+
+
+
+if($action == 'updaterank')
+{
+	$updaterank = $crud->updaterank(); 
+	if($updaterank)
+		echo $updaterank;
+}
+
+
+
 
 
 ?>

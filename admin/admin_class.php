@@ -1413,7 +1413,7 @@ function delivstatus()
 {
 	$delivid=$_POST['delivid'];
 	$qry = $this->db->query("SELECT * FROM deliveryperson where id='$delivid'");
-	$res = $qry->fetch_array()[7];
+	$res = $qry->fetch_array()[8];
 	if($res==1){
 		$qry2 = $this->db->query("UPDATE deliveryperson SET status=2 WHERE id='$delivid'");
 	}
@@ -1429,31 +1429,7 @@ function addjob()
 {
 	include 'db_connect.php';
 	extract($_POST);
-	// $sql=$this->db->query("INSERT INTO jobs (jobtitle, jobid, jobdesc, jobreq, status) 
-	// 							VALUES ('$jobtitle', NULL, '$jobdescription', '$par1', 1);
-	// 							SET @jobid = CONCAT('HCJ', LAST_INSERT_ID());
-	// 							UPDATE jobs SET jobid = @jobid WHERE id = LAST_INSERT_ID();");
 
-	// $result2=$this->db->query("UPDATE jobs SET jobid = concat('HCJ',id) where licno = '$delivlic'");
-	// $result3=$this->db->query("UPDATE deliveryperson SET pwd = md5(concat('HCD',id)) where licno = '$delivlic'");
-
-	// if ($conn -> multi_query($sql)) {
-	// 	do {
-	// 	  // Store first result set
-	// 	  if ($result = $mysqli -> store_result()) {
-	// 		while ($row = $result -> fetch_row()) {
-	// 		  printf("%s\n", $row[0]);
-	// 		}
-	// 	   $result -> free_result();
-	// 	  }
-	// 	  // if there are more result-sets, the print a divider
-	// 	  if ($mysqli -> more_results()) {
-	// 		printf("-------------\n");
-	// 	  }
-	// 	   //Prepare next result set
-	// 	} while ($mysqli -> next_result());
-	//   }
-	// echo $this->db->error;
 						
 	$sql1 = "INSERT INTO jobs (jobtitle, jobid, jobdesc, jobreq, status) VALUES (TRIM('$jobtitle'), ' ', TRIM('$jobdescription'), '$par1', 1)";
     $q1=$conn->query($sql1); // execute the first query
@@ -1486,9 +1462,11 @@ function tablejob()
 	$i=1;
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
+
 			$sts="";
 			$id=$row["id"];
-			if($row["status"]==1)
+			$date_now = date("Y-m-d");
+			if($date_now < $row["expiredate"] && $row["status"]==1)
 				$sts='<span class="status active">Active</span>';
 			else
 				$sts='<span class="status blocked">Disabled</span>';
@@ -1497,8 +1475,9 @@ function tablejob()
 			'<td>' .$i. '</td>'.
 				'<td class="sorting_1" onclick="window.location.href =\'jobcandidatelist.php?jobid='.$row["jobid"].'\'">' .$row["jobtitle"]. '</td>'.
 				'<td>' .$row["jobid"]. '</td>'.
-				'<td class="sorting_1">' .$row["jobdesc"]. '</td>'.
+				'<td class="sorting_1 truncate" onclick="toggleExpand(this)">' .$row["jobdesc"]. '</td>'.
 				'<td>' .$row["jobreq"]. '</td>'.
+				'<td>' .$row["expiredate"]. '</td>'.
 				'<td>'.$sts.'</td>'.
 				'<td>
 					<div class="action__buttons">
@@ -1529,7 +1508,7 @@ function jobupdate(){
 
 	extract($_POST);
 	
-	$qry = $this->db->query("UPDATE jobs SET jobtitle=TRIM('$jobtitle'), jobdesc=TRIM('$jobdescription'), jobreq='$par1' WHERE id='$jobid'");
+	$qry = $this->db->query("UPDATE jobs SET jobtitle=TRIM('$jobtitle'), jobdesc=TRIM('$jobdescription'), jobreq='$par1',expiredate='$expire_date' WHERE id='$jobid'");
 	
 	return $qry;
 
@@ -1548,9 +1527,10 @@ function jobedit()
 				$jobtitle=$row["jobtitle"];
 				$jobdesc=$row["jobdesc"];
 				$jobreq=$row["jobreq"];
+				$expiredate=$row["expiredate"];
 				$jobreq=str_replace(",","-",$jobreq);
 				// echo $jobreq;
-				$str=$jobtitle."#".$jobdesc."#".$jobreq;
+				$str=$jobtitle."#".$jobdesc."#".$jobreq."#".$expiredate;
 			}
 		}
 		return $str;
@@ -1572,26 +1552,34 @@ function jobstatus()
 
 function tablejobcandidates(){
 	extract($_POST);
-	$result=$this->db->query("SELECT * FROM cv  where jobid = '$jobid'");
-	
+	$result=$this->db->query("SELECT * FROM cv  where jobid = '$jobid' order by percentage DESC");
 	$str = '';
 	$i=1;
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
+			if($row['percentage']==0){
+				$rnk = '-';
+			}else{
+				$rnk = $i;
+			}
 			$rid = $row['userid'];
 			$qry = $this->db->query("SELECT * FROM registration where reg_id='$rid'");$row1 = $qry->fetch_array();$str1 =$row1["reg_name"]; 
 			$sts="";
 			$id=$row["id"];
 			if($row["status"]==1)
-				$sts='<span class="status active">Active</span>';
-			else
-				$sts='<span class="status blocked">Disabled</span>';
+				$sts='<span class="status active">Job Offered</span>';
+			else if($row["status"]==2)
+				$sts='<span class="status blocked">Rejected</span>';
+			else if($row["status"]==3)
+				$sts='<span class="status bg-primary-light-varient">Pending</span>';
 			$str = $str .
 			'<tr id='.$row["id"].' role="row" class="odd" >'.
 			'<td>' .$i. '</td>'.
 				'<td class="sorting_1" onclick="window.location.href =\'jobcandidatelist.php?jobid='.$row["jobid"].'\'">'.$str1.'</td>'.
 				'<td>' .$row["userid"]. '</td>'.
-				'<td class="sorting_1">' .$row["cv"]. '</td>'.
+				'<td><a style="color: blue; text-decoration: underline; font-weight: bold; background-color: WhiteSmoke; padding: 5px 10px; border-radius: 5px;" href="/haycouture/user/assets/uploaded_files/resume/'.$row["cv"].'" target="_blank">View Uploaded CV</a></td>'.
+				'<td class="sorting_1">'.$row["percentage"]. '</td>'.
+				'<td class="sorting_1">' .$rnk. '</td>'.
 				'<td>'.$sts.'</td>'.
 				'<td>
 					<div class="action__buttons">
@@ -1600,9 +1588,7 @@ function tablejobcandidates(){
 							<button onclick="fn2('.$id.')" type="button"  class="fas fa-toggle-on" title="Toggle"></button>
 						</a>
 
-						<!-- <a class="btn-action delete" title="Delete">
-							<i class="fas fa-trash-alt"></i>
-						</a> -->
+						
 					</div>
 				</td>
 			</tr>';
@@ -1644,6 +1630,30 @@ function updaterank(){
 }
 
 
+
+
+
+function jobsts()
+{
+
+	$id=$_POST['jobid'];
+	$result=$this->db->query("SELECT * FROM cv  where id = '$id'");
+	$qry2='';
+	$res = $result->fetch_array()[5];
+		if($res==1){
+			$qry3 = $this->db->query("UPDATE cv SET status=2 WHERE id = '$id'");
+		}
+		else if($res==2){
+			$qry2 = $this->db->query("UPDATE cv SET status=1 WHERE id = '$id'");
+		}
+		else {
+			$qry2 = $this->db->query("UPDATE cv SET status=2 WHERE id = '$id'");
+		}
+
+		return $qry2;
+	
+	
+}
 }
 ?>
 	

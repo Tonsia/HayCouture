@@ -52,7 +52,7 @@ def cv_predd(input_parameters : model_input):
     req = input_dictionary['req']
     cv = input_dictionary['cv']
     result = analyzecv(req,cv)
-    return result
+    return result[cv]
 
 
 def analyzecv(req,cvs):
@@ -67,7 +67,8 @@ def findsimiliarity(requirement,targetcv):
   print(targetcv)
 
   ### Targetcv document processing ###
-  dir = 'C:/wamp64/www/haycouture/user/assets/uploaded_files/resume/'
+  dir = 'F:/Wamp/www/haycouture/user/assets/uploaded_files/resume/'
+  #dir = 'C:/wamp64/www/haycouture/user/assets/uploaded_files/resume/'
   filename = dir+targetcv
   doc= fitz.open(filename)
   targetcvtext=""

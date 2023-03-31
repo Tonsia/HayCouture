@@ -78,7 +78,8 @@ include "header.php";
                                                     }
                                                      echo '</ul>';
                                                 }   
-                                            }}
+                                            }
+                                        }
                                             
                                          
                                     ?>
@@ -89,33 +90,19 @@ include "header.php";
                                     $sql = "SELECT * FROM cv WHERE jobid = '$jobId' AND userid = '$regId'";
                                     $result = $conn->query($sql);
 
-                                    if ($result->num_rows > 0) {
-                                        // Display a message saying that the user has already applied
-                                        echo '<button class="primary-btn" style="margin-top: 20px;" >Already Applied!</button>';
-
-                                        // echo "<p>You have already applied for this job.</p>";
-                                    } else {
-                                        // Display the file input and submit button
-                                    ?>
-                                        <form id="applyForm" enctype="multipart/form-data">
-                                            <input type="file" class="form-control" name="cvres" id="cvres" accept="application/pdf" style="color: red; padding: 10px; border: 2px solid #ccc; border-radius: 4px; font-size: 16px;">
-                                            <input type="hidden" id="jobId" name="jobId" value="<?php echo $jobId; ?>">
-                                            <input type="hidden" id="regId" name="regId" value="<?php echo $regId; ?>">
-                                            <button class="primary-btn" style="margin-top: 20px;" type="submit">Apply Now</button>
-                                        </form>
-                                    <?php
-                                    }
+                                    // if ($result->num_rows > 0) {
+                                    //}
 
                                     ?>
 
         
 
-                                <!-- <form id="applyForm" enctype="multipart/form-data">
+                                <form id="applyForm" enctype="multipart/form-data">
                                 <input type="file" class="form-control" name="cvres" id="cvres" accept="application/pdf" style="color: red; padding: 10px; border: 2px solid #ccc; border-radius: 4px; font-size: 16px;">
                                 <input type="hidden" id="jobId" name="jobId" value="<?php echo  isset($_GET['jobid']) ? $_GET['jobid'] : ''; ?>">
                                 <input type="hidden" id="regId" name="regId" value="<?php echo  isset($_SESSION['regid']) ? $_SESSION['regid'] : ''; ?>">
-                                <button class="primary-btn" style="margin-top: 20px;" type="submit">Apply Now</button>
-                                </form> -->
+                                <button class="primary-btn" style="margin-top: 20px;" type="submit">Update</button>
+                                </form>
 
 
                             </div>
@@ -207,14 +194,14 @@ include "header.php";
             formData.append('jobId', $('input[name="jobId"]').val()); // append other data to FormData object
             formData.append('regId', $('input[name="regId"]').val());
             $.ajax({
-                url: 'ajax.php?action=addcv',
+                url: 'ajax.php?action=updatecv',
                 type: 'POST',
                 data: formData,
                 processData: false,
                 contentType: false,
                 success: function(response) 
                 {
-                    console.log(response);
+                    //document.write(response);
                     const myArray = response.split("#");
                     if(myArray[0].trim()==1){
                         var arr = 

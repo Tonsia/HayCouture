@@ -85,8 +85,8 @@
                                                 <td class="sorting_1">'.$i++.'</td>
                                                 <td>'.$row6['reg_name'].'</td>
                                                 <td>'.$row0['uniqueid'].'</td>
-                                                <td><a target="_blank" href="../customdev/'.$row0["tcolor"].'">'.$row0["tcolor"].'<br><span style="display: inline-block; width: 30px; height: 30px; background: url(../customdev/'.$row0['tcolor'].'); background-position: 50% 50%; background-size: cover; border-radius: 50%;"> </span></td>
-                                                <td><a target="_blank" href="../customdev/'.$row0["bcolor"].'">'.$row0["bcolor"].'<span style="display: inline-block; width: 30px; height: 30px; background: url(../customdev/'.$row0['bcolor'].'); background-position: 50% 50%; background-size: cover; border-radius: 50%;"> </span></td>
+                                                <td><a target="_blank" href="../custom/'.$row0["tcolor"].'">'.$row0["tcolor"].'<br><span style="display: inline-block; width: 30px; height: 30px; background: url(../custom/'.$row0['tcolor'].'); background-position: 50% 50%; background-size: cover; border-radius: 50%;"> </span></td>
+                                                <td><a target="_blank" href="../custom/'.$row0["bcolor"].'">'.$row0["bcolor"].'<span style="display: inline-block; width: 30px; height: 30px; background: url(../custom/'.$row0['bcolor'].'); background-position: 50% 50%; background-size: cover; border-radius: 50%;"> </span></td>
                                                 <td>'.$row0["size"].'</td>
                                                 <td>'.$row0["neckline"].'</td>
                                                 <td>'.$row0["sleeve"].'</td>

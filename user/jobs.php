@@ -109,22 +109,39 @@ tr:hover {
                                 
 
                                     echo '
-                                    <tr role="row" class="odd">
-                                        <td class="sorting_1">'.$i++.'</td>
-                                        <td><b>'.$jobtitle.'</b></td>
-                                        <td>'.$jobid.'</td>
-                                        
-                                        <td class="truncate" onclick="toggleExpand(this)">'.$jobdesc.'</td>
-                                        <td class="truncate" onclick="toggleExpand(this)">'.$jobreq.'</td>
-                                        <td>
-                                                            <div class="action-area">
-                                                                <a class="buy-btn action-btn mt-15" href="./jobpage?jobid='.$jobid.'">Apply Now</a>
-                                                            </div>
-                                        </td>
-                                    </tr>';
+                                      <tr role="row" class="odd">
+                                          <td class="sorting_1">'.$i++.'</td>
+                                          <td><b>'.$jobtitle.'</b></td>
+                                          <td>'.$jobid.'</td>
+                                          <td class="truncate" onclick="toggleExpand(this)">'.$jobdesc.'</td>
+                                          <td class="truncate" onclick="toggleExpand(this)">'.$jobreq.'</td>';
+
+                                      // Check if the user has already applied for this job
+                                      $regid = isset($_SESSION['regid']) ? $_SESSION['regid'] : '';
+                                      $sql = "SELECT * FROM cv WHERE jobid = '$jobid' AND userid = '$regid'";
+                                      $result = $conn->query($sql);
+                                      if ($result->num_rows > 0) {
+                                          // Display a message saying that the user has already applied
+                                          echo '<td>
+                                                    <div class="action-area">
+                                                        <a class="buy-btn action-btn mt-15" href="./jobpage?jobid='.$jobid.'">Applied!</a>
+                                                    </div>
+                                                </td>';
+                                      } else {
+                                          // Display the "Apply Now" button
+                                          echo '<td>
+                                                    <div class="action-area">
+                                                        <a class="buy-btn action-btn mt-15" href="./jobpage?jobid='.$jobid.'">Apply Now</a>
+                                                    </div>
+                                                </td>';
+                                      }
+                                      echo '</tr>';
+
+
+
                                 
                                 }
-                            }
+                              }
                             else{
                                 echo("<script>location.href = './nojobs.php';</script>");
                             }

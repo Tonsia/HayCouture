@@ -45,8 +45,10 @@ include './db_connect.php';
                                 <th class="sorting_asc" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="job Name: activate to sort column descending" style="width: 20%;">Job Title</th>
                                 <th class="sorting_asc" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="job Name: activate to sort column descending" style="width: 20%;">Job ID</th>
 
-                                <th class="sorting" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 50%;">Job Description</th>
+                                <th class="sorting" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 50%; ">Job Description</th>
                                 <th class="sorting" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 50%;">Requirements</th>
+                                <th class="sorting" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 50%;">Valid Until</th>
+
                                 <th class="sorting" tabindex="0" aria-controls="jobTable" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 10%;">Status</th>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Action" style="width:10%;">Action</th>
                             </tr>
@@ -63,6 +65,9 @@ include './db_connect.php';
     <?php include './js.php';?>
     <script type="text/javascript">
         // to list all categories
+        function toggleExpand(td) {
+                td.classList.toggle('expand');
+            }
         $(document).ready(function() {
                     $.ajax({
                     type: "POST",
@@ -114,6 +119,8 @@ include './db_connect.php';
             });
             
         }
+        
+            
         
             
         </script>
