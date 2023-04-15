@@ -367,6 +367,13 @@ if($action == 'updaterank')
 		echo $updaterank;
 }
 
+if($action == 'cancelorder')
+{
+	$cancelorder = $crud->cancelorder(); 
+	if($cancelorder)
+		echo $cancelorder;
+}
+
 
 
 

@@ -326,21 +326,24 @@
 
                                             if($status==3){
                                                 $stat = '<button class="btn btn-secondary btn-lg m-5" title="Processing" disabled>Shipped</button>';
-                                                $stat2 = '';
+                                                $stat2 = '<button onclick="updfn(\''.$cartid.'\')" class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close"></button>';
+
                                             }else if($status==6){
                                                 $stat = '<button class="btn btn-success btn-lg m-2" title="Delivered">Delivered</button>';
-                                                $stat2 = '<button onclick="reviewfn('."'".$productid."'".')" class="btn btn-outline-secondary btn-lg m-2" title="Delivered">Write A Review</button><br>
+                                                $stat2 = '<button onclick="updfn(\''.$cartid.'\')" onclick="reviewfn('."'".$productid."'".')" class="btn btn-outline-secondary btn-lg m-2" title="Delivered">Write A Review</button><br>
                                                  <button id="b7" onclick="returnorder('."'".$productid."'".')" class=" return btn btn-outline-danger btn-lg m-2" title="Delivered">Return Order</button>';
                                                 // <button id="b7" onclick="returnorder('."'".$productid."'".')" class=" return btn btn-outline-danger btn-lg m-2" title="Delivered">Return Order</button>';
 
                                             }
                                             else if($status==2){
                                                 $stat = '<button class="btn btn-warning btn-lg m-5" title="Delete Item" disabled>Confirmed</button>';
-                                                $stat2 = '';
+                                                $stat2 = '<button onclick="updfn(\''.$cartid.'\')" class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close"></button>';
+
                                             }
                                             else if($status==4){
                                                 $stat = '<button class="btn btn-info btn-lg m-5" title="Delete Item" disabled>Picked Up</button>';
-                                                $stat2 = '';
+                                                $stat2 = '<button onclick="updfn(\''.$cartid.'\')" class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close"></button>';
+
                                             }
                                             else if($status==9){
                                                 $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>Returned</button>';
@@ -352,7 +355,8 @@
                                             }
                                             else if($status==5){
                                                 $stat = '<button class="btn btn-danger btn-lg m-5" title="Delete Item" disabled>In Transit</button>';
-                                                $stat2 = '';
+                                                $stat2 = '<button onclick="updfn(\''.$cartid.'\')" class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close"></button>';
+
                                             }
 
                                             echo '<tr>
@@ -456,6 +460,21 @@
                 // }
                 // );
                 // };
+
+                function updfn(a){
+                    $.ajax({
+                        url:"ajax.php?action=cancelorder",
+                        method:"POST",
+                        data:{
+                            cid : a
+                        },
+                        success:function(data)
+                        {
+                            location.reload();
+                        }
+                    })
+                }
+
                 function reviewfn(a){
                     //alert(a);
                     $('#pid').val(a);

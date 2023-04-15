@@ -193,76 +193,97 @@ include "header.php";
             formData.append('file', $('#cvres')[0].files[0]); // append file data to FormData object
             formData.append('jobId', $('input[name="jobId"]').val()); // append other data to FormData object
             formData.append('regId', $('input[name="regId"]').val());
+            
             $.ajax({
-                url: 'ajax.php?action=updatecv',
+                url: 'pdfcheck.php',
                 type: 'POST',
                 data: formData,
                 processData: false,
                 contentType: false,
                 success: function(response) 
                 {
-                    //document.write(response);
-                    const myArray = response.split("#");
-                    if(myArray[0].trim()==1){
-                        var arr = 
-                            {
-                                'req': <?php echo "'".$jreq."'"; ?>,
-                                'cv': myArray[1].trim()
-                            };
-
+                    if(response=="true")
+                    {
                             $.ajax({
-                                url: 'http://127.0.0.1:8000/cv_prediction/',
+                                url: 'ajax.php?action=updatecv',
                                 type: 'POST',
-                                data: JSON.stringify(arr),
-                                contentType: 'application/json; charset=utf-8',
-                                dataType: 'json',
-                                async: false,
-                                success: function(msg) {
-                                    //console.log(msg);
-                                    $.ajax({
-                                        url: 'ajax.php?action=updaterank',
-                                        type: 'POST',
-                                        data: {
-                                            fname : myArray[1].trim(),
-                                            rank : msg
-                                        },
-                                        success: function(response) 
-                                        {
-                                            //console.log(response);   
-                                            if(response == 1){   
-                                                Swal.fire({
-                                                        position: 'center',
-                                                        icon: 'success',
-                                                        text: "Job Applied Successfully!",
-                                                        type: "success"
-                                                    }).then((result) => {
-                                                    location.href='./appliedjobs.php?jobid=' + $('input[name="jobId"]').val();
-                                                    })
-                                            }
-                                            else{
-                                                Swal.fire({
-                                                    icon: 'warning',
-                                                    text: 'Invalid!',
-                                                    })
-                                            }
-                                        }
-                                    });
+                                data: formData,
+                                processData: false,
+                                contentType: false,
+                                success: function(response) 
+                                {
+                                    //document.write(response);
+                                    const myArray = response.split("#");
+                                    if(myArray[0].trim()==1){
+                                        var arr = 
+                                            {
+                                                'req': <?php echo "'".trim($jreq)."'"; ?>,
+                                                'cv': myArray[1].trim()
+                                            };
+
+                                            $.ajax({
+                                                url: 'http://127.0.0.1:8000/cv_prediction/',
+                                                type: 'POST',
+                                                data: JSON.stringify(arr),
+                                                contentType: 'application/json; charset=utf-8',
+                                                dataType: 'json',
+                                                async: false,
+                                                success: function(msg) {
+                                                    //console.log(msg);
+                                                    $.ajax({
+                                                        url: 'ajax.php?action=updaterank',
+                                                        type: 'POST',
+                                                        data: {
+                                                            fname : myArray[1].trim(),
+                                                            rank : msg
+                                                        },
+                                                        success: function(response) 
+                                                        {
+                                                            //console.log(response);   
+                                                            if(response == 1){   
+                                                                Swal.fire({
+                                                                        position: 'center',
+                                                                        icon: 'success',
+                                                                        text: "Job Applied Successfully!",
+                                                                        type: "success"
+                                                                    }).then((result) => {
+                                                                    location.href='./appliedjobs.php?jobid=' + $('input[name="jobId"]').val();
+                                                                    })
+                                                            }
+                                                            else{
+                                                                Swal.fire({
+                                                                    icon: 'warning',
+                                                                    text: 'Invalid!',
+                                                                    })
+                                                            }
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                    }else{
+                                        Swal.fire({
+                                            icon: 'warning',
+                                            text: 'Error Occured!',
+                                            })
+                                    }
+
+                    
                                 }
                             });
-                    }else{
+   
+ 
+                        }else{
                         Swal.fire({
                             icon: 'warning',
-                            text: 'Error Occured!',
-                            })
+                            text: 'Uplaod A valid CV..!',
+                        })
                     }
-
-      
                 }
             });
-   
  
  }
 });
+
 
 
 </script>

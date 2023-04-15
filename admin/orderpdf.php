@@ -122,10 +122,10 @@ $pdf->setFont('helvetica', 'B', 12);
 $pdf->AddPage();
 
 ////////////////////////////////////////////////////////
-$server = "191.233.27.18";
-$username = "admin";
-$password = "admin@25";
-$dbname = "hccopy";
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "haycouture";
 $conn = new mysqli($server, $username, $password, $dbname);
 $cid = $_GET['uid'];
 

@@ -2299,7 +2299,12 @@ function similar(){
         $qry1=$this->db->query("UPDATE cv SET percentage='$rank' WHERE cv = '$fname'");
         return $qry1;
     }
-    
-    
+
+    function cancelorder(){
+        extract($_POST);
+        $qry1=$this->db->query("UPDATE cart SET status='7' WHERE id = '$cid'");
+        return $qry1;
+    }
+
     
 }

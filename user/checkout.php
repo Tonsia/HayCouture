@@ -721,7 +721,10 @@
                             //document.write(response);
                             console.log(typeof(parseInt(response)));
                             if(response==5){
-                                alert("Coupon Not Valid");
+                                Swal.fire({
+                                        icon: 'warning',
+                                        text: 'Coupon Not Valid!',
+                                        }) 
                                 $("#couponcode").val("");
                                 
                                 $("#coupondisc").html("₹0.00");

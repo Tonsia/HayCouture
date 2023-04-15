@@ -155,8 +155,8 @@ foreach(glob('*_1.*') as $name) {
                             url: 'http://127.0.0.1:8000/imagesimiliar_prediction/',
                             type: 'POST',
                             data: JSON.stringify(arr),
-                            contentType: 'application/json; charset=utf-8',
-                            dataType: 'json',
+                            contentType: 'application/json; charset=utf-8', //specifies that the request data is JSON data
+                            dataType: 'json', //specifies that the response data should be parsed as JSON
                             async: false,
                             success: function(msg) {
                                 data = JSON.parse(msg)

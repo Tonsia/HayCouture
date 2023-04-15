@@ -124,10 +124,10 @@ $pdf->setFont('helvetica', 'B', 12);
 $pdf->AddPage();
 
 ////////////////////////////////////////////////////////
-$server = "191.233.27.18";
-$username = "admin";
-$password = "admin@25";
-$dbname = "hccopy";
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "haycouture";
 $conn = new mysqli($server, $username, $password, $dbname);
 $cid = $_GET['jobid'];
 $jobtitle='';
@@ -137,51 +137,6 @@ if ($order->num_rows > 0) {
     $orderrow = $order->fetch_array();
     $jobtitle = $orderrow['jobtitle'];
 }
-//     $userid = $orderrow['userid'];
-//     $addrid = $orderrow['addressid'];
-//     $tprice = $orderrow['totalamt'];
-//     $sql = "SELECT * FROM useraddress WHERE id = '$addrid'";$addr = $conn->query($sql);$addrss = $addr->fetch_array();
-//     $name = $addrss['name'];
-//     $mobile = $addrss['mobile'];
-//     $hname = $addrss['hname'];
-//     $cityid = $addrss['cityid'];
-//     $disctrictid = $addrss['disctrictid'];
-//     $stateid = $addrss['stateid'];
-//     $pin = $addrss['pin'];
-
-//     $sql = "SELECT * FROM states WHERE state_id = '$stateid'";$state = $conn->query($sql);$states = $state->fetch_array();
-//     $statename = $states['state_name'];
-
-//     $sql = "SELECT * FROM district WHERE district_id = '$disctrictid'";$district = $conn->query($sql);$districts = $district->fetch_array();
-//     $districtname = $districts['district_name'];
-
-//     $sql = "SELECT * FROM city WHERE city_id = '$cityid'";$city = $conn->query($sql);$citys = $city->fetch_array();
-//     $cityname = $citys['city_name'];
-
-
-//     $paymentid = $orderrow['paymentid'];
-//     $sql = "SELECT * FROM cart WHERE id = '$cartid'";$cart = $conn->query($sql);
-//     if ($cart->num_rows > 0) {
-//         $cartrow = $cart->fetch_array();
-//         $productid = $cartrow['productid'];
-//         $sizeid = $cartrow['size_id'];
-//         $colorid = $cartrow['color_id'];
-//         $qty = $cartrow['quantity'];
-
-//         $sql = "SELECT * FROM product_size WHERE size_id = '$sizeid'";$size = $conn->query($sql);$sizen = $size->fetch_array();
-//         $sizename = $sizen['size'];
-
-//         $sql = "SELECT * FROM product_color WHERE color_id = '$colorid'";$color = $conn->query($sql);$colorn = $color->fetch_array();
-//         $colorname = $colorn['color'];
-
-//         $sql = "SELECT * FROM products WHERE product_id = '$productid'";$pname = $conn->query($sql);$pn = $pname->fetch_array();
-//         $pname = $pn['p_name'];
-//         $price = $pn['product_price'];
-//     }
-// }
-
-
-
 
 $pdf->setFont('helvetica', 'B', 22);
 $pdf->Write(0, "Applications Submitted - $jobtitle", '', 0, 'C', true, 0, false, false, 0);

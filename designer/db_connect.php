@@ -1,7 +1,7 @@
 <?php
-$dbhost = "191.233.27.18";
-$dbuser = "admin";
-$dbpass = "admin@25";
-$db = "hccopy";
+ $dbhost = "localhost";
+ $dbuser = "root";
+ $dbpass = "";
+ $db = "haycouture";
  $conn = mysqli_connect($dbhost, $dbuser, $dbpass , $db);
 ?>

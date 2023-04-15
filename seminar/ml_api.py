@@ -67,8 +67,8 @@ def findsimiliarity(requirement,targetcv):
   print(targetcv)
 
   ### Targetcv document processing ###
-  dir = 'F:/Wamp/www/haycouture/user/assets/uploaded_files/resume/'
-  #dir = 'C:/wamp64/www/haycouture/user/assets/uploaded_files/resume/'
+#   dir = 'F:/Wamp/www/haycouture/user/assets/uploaded_files/resume/'
+  dir = 'C:/wamp64/www/haycouture/user/assets/uploaded_files/resume/'
   filename = dir+targetcv
   doc= fitz.open(filename)
   targetcvtext=""
